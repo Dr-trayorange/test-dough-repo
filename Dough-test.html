@@ -1,0 +1,159 @@
+{
+  "name": "Album",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the album"
+    },
+    "picture_url": {
+      "type": "string",
+      "description": "Album cover image URL"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
+{
+  "name": "Budget",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": [
+        "clothing",
+        "accessories",
+        "shoes",
+        "bags",
+        "beauty",
+        "other"
+      ],
+      "description": "Budget category"
+    },
+    "monthly_limit": {
+      "type": "number",
+      "description": "Monthly budget limit"
+    },
+    "month": {
+      "type": "string",
+      "description": "Month in format YYYY-MM"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "USD",
+        "ZAR"
+      ],
+      "default": "USD",
+      "description": "Currency type"
+    }
+  },
+  "required": [
+    "category",
+    "monthly_limit",
+    "month"
+  ]
+}
+{
+  "name": "Item",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the item"
+    },
+    "price": {
+      "type": "number",
+      "description": "Price of the item"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand or retailer name"
+    },
+    "picture_url": {
+      "type": "string",
+      "description": "Optional picture URL"
+    },
+    "album_id": {
+      "type": "string",
+      "description": "Reference to the album this item belongs to"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "clothing",
+        "accessories",
+        "shoes",
+        "bags",
+        "beauty",
+        "other"
+      ],
+      "default": "clothing",
+      "description": "Item category for budget tracking"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "USD",
+        "ZAR"
+      ],
+      "default": "USD",
+      "description": "Currency type"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "brand",
+    "album_id"
+  ]
+}
+{
+  "name": "ShoppingListItem",
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "description": "Reference to the item"
+    }
+  },
+  "required": [
+    "item_id"
+  ]
+}
+{
+  "name": "Suggestion",
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Suggestion text from user"
+    }
+  },
+  "required": [
+    "text"
+  ]
+}
+{
+  "name": "UserBalance",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "description": "Balance amount"
+    },
+    "currency": {
+      "type": "string",
+      "enum": [
+        "USD",
+        "ZAR"
+      ],
+      "default": "USD",
+      "description": "Currency type"
+    }
+  },
+  "required": [
+    "amount"
+  ]
+}
